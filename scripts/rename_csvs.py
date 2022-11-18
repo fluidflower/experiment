@@ -3,10 +3,10 @@ from os import listdir
 from os.path import isfile, join
 import shutil
 
-oldpath = "/home/bernd/fluidflower/experiment/benchmarkdata/spatial_maps/csv-segmentations/c5/"
-newpath = "/home/bernd/fluidflower/experiment/benchmarkdata/spatial_maps/run5"
+oldPath = "/home/bernd/fluidflower/experiment/benchmarkdata/spatial_maps/csv-segmentations/c5/"
+newPath = "/home/bernd/fluidflower/experiment/benchmarkdata/spatial_maps/run5/"
 
-files = [f for f in listdir(oldpath) if isfile(join(oldpath, f))]
+files = [f for f in listdir(oldPath) if isfile(join(oldPath, f))]
 files.sort()
 
 startTime = datetime.strptime(files[0][0:16], "%y%m%d_time%H%M%S")
@@ -17,6 +17,6 @@ for oldFileName in files:
     delta = (dtObject - startTime)
     seconds = int(delta.total_seconds())
 
-    newFileName = newpath + "/segmentation_" + f"{seconds:06d}" + "s.csv"
+    newFileName = f"segmentation_{seconds:06d}s.csv"
 
-    shutil.copyfile(oldpath + oldFileName, newFileName)
+    shutil.copyfile(oldPath + oldFileName, newPath + newFileName)

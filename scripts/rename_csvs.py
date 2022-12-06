@@ -3,8 +3,8 @@ from os import listdir
 from os.path import isfile, join
 import shutil
 
-oldPath = "/home/bernd/fluidflower/experiment/benchmarkdata/spatial_maps/csv-segmentations/c5/"
-newPath = "/home/bernd/fluidflower/experiment/benchmarkdata/spatial_maps/run5/"
+oldPath = "/home/bernd/FluidFlower/experiment/benchmarkdata/spatial_maps/final-csv-segmentations/c5/"
+newPath = "/home/bernd/FluidFlower/experiment/benchmarkdata/spatial_maps/run5/"
 
 files = [f for f in listdir(oldPath) if isfile(join(oldPath, f))]
 files.sort()
